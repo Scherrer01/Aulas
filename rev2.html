@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOJA DE CDS</title>
+</head>
+<body>
+    FAÇA SEU PEDIDO <label for="tipos"></label>
+    <select id="info">
+        <option value="fitaCassete">Fita Cassete</option>
+        <option value="DVD">DVD</option>
+        <option value="CD">CD</option>
+    </select>
+    
+    <button onclick="informacoes()">Consulte Informações</button>
+    <div id="resultadoCD"></div>
+
+    <script>
+        function informacoes() {
+            let produto = document.getElementById("tipos").value;
+            let resultado = ""; 
+
+            if (produto === "fitaCassete") {
+                resultado = "Fita cassete é um formato de mídia analógica para gravação e reprodução de áudio";
+            } else if (produto === "DVD") {
+                resultado = "é uma mídia de armazenamento de dados que utiliza tecnologia óptica para armazenar informações, como filmes, jogos, músicas e outros tipos de dados.";
+            } else if (produto === "CD") {
+                resultado = "é um disco óptico digital de armazenamento de dados.";
+            }  
+        }
+        document.getElementById("resultadoCD").innerHTML = 
+                `As informações sobre ${produto} é: ${resultado}`;
+    </script>
+    
+</body>
+</html>
