@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOJA DE CDS</title>
 </head>
 <body>
-    FAÇA SEU PEDIDO <label for="tipos"></label>
+    FAÇA SEU PEDIDO: 
     <select id="info">
-        <option value="fitaCassete">Fita Cassete</option>
+        <option value="fita Cassete">Fita Cassete</option>
         <option value="DVD">DVD</option>
         <option value="CD">CD</option>
     </select>
@@ -18,20 +18,20 @@
 
     <script>
         function informacoes() {
-            let produto = document.getElementById("tipos").value;
-            let resultado = ""; 
+            let produto = document.getElementById("info").value;
+            let resultado = "";
 
-            if (produto === "fitaCassete") {
+            if (produto === "fita Cassete") {
                 resultado = "Fita cassete é um formato de mídia analógica para gravação e reprodução de áudio";
             } else if (produto === "DVD") {
-                resultado = "é uma mídia de armazenamento de dados que utiliza tecnologia óptica para armazenar informações, como filmes, jogos, músicas e outros tipos de dados.";
+                resultado = "DVD é uma mídia de armazenamento de dados que utiliza tecnologia óptica para armazenar informações, como filmes, jogos e músicas.";
             } else if (produto === "CD") {
-                resultado = "é um disco óptico digital de armazenamento de dados.";
-            }  
+                resultado = "CD é um disco óptico digital de armazenamento de dados.";
+            }
+
+            document.getElementById("resultadoCD").innerHTML = 
+                `As informações sobre ${produto} são: ${resultado}`;
         }
-        document.getElementById("resultadoCD").innerHTML = 
-                `As informações sobre ${produto} é: ${resultado}`;
     </script>
-    
 </body>
 </html>
